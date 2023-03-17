@@ -195,7 +195,7 @@ d_binom_sens<-brm(Female|trials(total)~Zone*Season +(1|Year),
                             prior(normal(0,5), coef="Zone3:SeasonSpring"),
                             prior(exponential(10), class="sd")),
                   # sample_prior = "only",
-                  file="SexRatio_Sensitivity2.rds",
+                  file="SexRatio_Sensitivity.rds",
                   chains=4, iter=2000, cores=4)
 summary(d_binom_sens)
 conditional_effects(d_binom_sens, reformula=NA)
